@@ -13,7 +13,7 @@ app.use(cors({ origin: ['http://localhost:5173'],
     methds:["GET","POST"]
  }));
 
-mongoose.connect('mongodb://localhost:27017/Tracksystem')//mongodb://localhost:27017/yourproject'
+mongoose.connect(process.env.MONGO_URL)//mongodb://localhost:27017/yourproject'
 .then(() => console.log('MongoDB connected'))
 .catch(err => console.log('MongoDB connection error:', err));
 
